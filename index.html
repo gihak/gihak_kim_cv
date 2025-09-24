@@ -36,6 +36,24 @@
                 color: #000000;
                 font-weight: bold;
             }
+            /* Style education articles to place logos next to text */
+            #three .features article {
+                display: flex;
+                align-items: center;
+            }
+            #three .features article .inner {
+                flex-grow: 1; /* Makes text block take available space */
+            }
+            /* Base size and position for education logos */
+            #three .features article .image {
+                width: 180px; 
+                margin-left: 1em; /* Closer to the text */
+                flex-shrink: 0; /* Prevents image from shrinking */
+            }
+            /* Larger size for specific logos */
+            #three .features article .image.logo-large {
+                width: 220px;
+            }
         </style>
     </head>
     <body class="is-preload">
@@ -124,18 +142,21 @@
                                     <h4><a href="https://neweng.cau.ac.kr/index.do" target="_blank">Chung-Ang University</a></h4>
                                     <p><i>Bachelor's degree, <a href="https://security.cau.ac.kr/contents.htm?id=eng_univ" target="_blank">Industrial Security</a> (March 2025 - 2029)</i></p>
                                 </div>
+                                <a href="https://neweng.cau.ac.kr/index.do" target="_blank" class="image"><img src="images/cau.png" alt="Chung-Ang University Logo" /></a>
                             </article>
                             <article>
                                 <div class="inner">
                                     <h4><a href="https://www.tue.nl/en/" target="_blank">Eindhoven University of Technology</a></h4>
                                     <p><i>Bachelor of Engineering, <a href="https://www.tue.nl/en/education/bachelor-college/bachelor-computer-science-and-engineering" target="_blank">Computer Science</a> (August 2024 - January 2025)</i></p>
                                 </div>
+                                <a href="https://www.tue.nl/en/" target="_blank" class="image logo-large"><img src="images/tue.png" alt="Eindhoven University of Technology Logo" /></a>
                             </article>
                             <article>
                                 <div class="inner">
                                     <h4><a href="https://www.iics.k12.tr/" target="_blank">Istanbul International Community School</a></h4>
                                     <p><i>International Baccalaureate Diploma (January 2021 - June 2024)</i></p>
                                 </div>
+                                <a href="https://www.iics.k12.tr/" target="_blank" class="image logo-large"><img src="images/iics.png" alt="Istanbul International Community School Logo" /></a>
                             </article>
                         </div>
                     </div>
