@@ -1,1 +1,2 @@
-# Computer Network Practical Class 
+# Computer Network Practical Lecture
+# Led by Professor Sunghwan Park
