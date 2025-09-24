@@ -4,62 +4,128 @@
         <title>Gihak Kim's CV</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable-no" />
+        <meta name="description" content="The professional resume of Gihak Kim, an Industrial Security major specializing in Cybersecurity and GRC." />
+        
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        
         <link rel="stylesheet" href="assets/css/main.css" />
+        
         <style>
             body {
-                background-color: #f4f4f4; /* Light gray background for the main page */
+                background-color: #f4f4f4;
+                font-family: 'Poppins', sans-serif;
             }
-            #header {
-                background-color: #3d3d3d; /* Darker gray for the sidebar */
-                color: #ffffff;
-            }
-            #header h1 a {
-                color: #ffffff;
-            }
-            #header p {
-                color: #cccccc; /* Lighter text for readability on dark gray */
-            }
-            #nav ul li a {
-                color: #cccccc;
-                border-color: #555555;
-            }
-            /* Style to underline links in the main content area */
+
             #main a {
-                text-decoration: underline;
+                text-decoration: none;
+                color: #007bff;
+                background-image: linear-gradient(to right, #007bff 50%, #007bff 50%);
+                background-position: 0 1.05em;
+                background-repeat: repeat-x;
+                background-size: 8px 2px;
+                transition: color 0.3s ease;
             }
-            /* Widen the main content container for longer lines of text */
+
+            #main a:hover {
+                color: #0056b3;
+            }
+
             #main .container {
                 min-width: 1250px;
             }
-            /* Make section titles black and bold */
+
             #main h3 {
                 color: #000000;
                 font-weight: bold;
+                text-transform: uppercase;
+                letter-spacing: 1px;
             }
-            /* Style education articles to place logos next to text */
+
             #three .features article {
                 display: flex;
                 align-items: center;
             }
+
             #three .features article .inner {
-                flex-grow: 1; /* Makes text block take available space */
+                flex-grow: 1;
             }
-            /* Base size and position for education logos */
-            #three .features article .image {
-                width: 180px; 
-                margin-left: 1em; /* Closer to the text */
-                flex-shrink: 0; /* Prevents image from shrinking */
+
+           #three .features article .image {
+                width: 180px;
+                margin-left: 1em;
+                flex-shrink: 0;
+                align-self: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
-            /* Larger size for specific logos */
+
             #three .features article .image.logo-large {
                 width: 220px;
+            }
+            
+            #header {
+                background: linear-gradient(135deg, #4a4a4a 0%, #2c2c2c 100%);
+                color: #ffffff;
+            }
+            #header h1 a { color: #ffffff; }
+            #header p { color: #cccccc; }
+            #nav ul li a {
+                color: #cccccc;
+                border-color: #555555;
+                transition: color 0.3s ease, border-bottom-color 0.3s ease;
+            }
+            #nav ul li a.active, #nav ul li a:hover {
+                color: #00aaff;
+                border-bottom-color: #00aaff;
+            }
+
+            section .features article {
+                background: #ffffff;
+                border-radius: 12px;
+                padding: 1.5em;
+                margin-bottom: 1.5em;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+                transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            }
+
+            section .features article:hover {
+                transform: translateY(-10px) scale(1.02);
+                box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+            }
+            
+            #four .feature-icons {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            #four .feature-icons li {
+                background-color: #ffffff;
+                padding: 1px 25px 12px 60px; 
+                border-radius: 40px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+                transition: background-color 0.3s ease, color 0.3s ease;
+                border: 1px solid #e0e0e0;
+            }
+            #four .feature-icons li:hover {
+                background-color: #3d3d3d;
+                color: #ffffff;
+            }
+            
+            .typed-cursor {
+                color: #00aaff;
+                animation: typed-blink 0.7s infinite;
+            }
+            @keyframes typed-blink {
+              50% { opacity: 0.0; }
             }
         </style>
     </head>
     <body class="is-preload">
         <section id="header">
             <header>
-                <span class="image avatar"><img src="images/master_gopher.png" alt="" /></span>
+                <span class="image avatar"><img src="images/master_gopher.png" alt="Gihak Kim" /></span>
                 <h1 id="logo"><a href="#">Gihak Kim</a></h1>
                 <p>Industrial Security Major with a<br />
                 Cross-Cultural Academic Background.<br />
@@ -79,17 +145,17 @@
             
             <footer>
                 <ul class="icons">
-                    <li><a href="https://www.researchgate.net/profile/Gihak-Kim-2?ev=hdr_xprf" class="icon brands fa-researchgate" target="_blank"><span class="label">ResearchGate</span></a></li>
-                    <li><a href="https://www.linkedin.com/in/gihak-kim" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
-                    <li><a href="https://github.com/gihak" class="icon brands fa-github" target="_blank"><span class="label">Github</span></a></li>
-                    <li><a href="E-mail To: kgihak@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-                    <li><a href="tel:+821039203009" class="icon solid fa-phone"><span class="label">Phone</span></a></li>
+                    <li><a href="https://www.researchgate.net/profile/Gihak-Kim-2?ev=hdr_xprf" class="icon brands fa-researchgate" target="_blank" aria-label="Gihak Kim's ResearchGate Profile"><span class="label">ResearchGate</span></a></li>
+                    <li><a href="https://www.linkedin.com/in/gihak-kim" class="icon brands fa-linkedin" target="_blank" aria-label="Gihak Kim's LinkedIn Profile"><span class="label">LinkedIn</span></a></li>
+                    <li><a href="https://github.com/gihak" class="icon brands fa-github" target="_blank" aria-label="Gihak Kim's Github Profile"><span class="label">Github</span></a></li>
+                    <li><a href="mailto:kgihak@gmail.com" class="icon solid fa-envelope" aria-label="Email Gihak Kim"><span class="label">Email</span></a></li>
+                    <li><a href="tel:+82-10-3920-3009" class="icon solid fa-phone" aria-label="Call Gihak Kim"><span class="label">Phone</span></a></li>
                 </ul>
             </footer>
         </section>
 
         <div id="wrapper">
-            <div id="main">
+            <main id="main">
 
                 <section id="one">
                     <div class="image main" data-position="center">
@@ -98,7 +164,7 @@
                     <div class="container">
                         <header class="major">
                             <h2>Gihak Kim</h2>
-                            <p><b>Industrial Security Major | Cybersecurity & GRC Enthusiast</b></p>
+                            <p><b><span id="typed-text"></span></b></p>
                         </header>
                         <p>A dedicated and detail-oriented Industrial Security undergraduate student at Chung-Ang University with a cross-cultural academic background, including studies in Bachelor Computer Science and Engineering at Eindhoven University of Technology. Proven ability to excel in fast-paced environments, with professional experience in customer service and educational support. Seeking to apply a strong foundation in cybersecurity principles and a passion for Governance, Risk, and Compliance (GRC) to solve complex security challenges. All of my academic research and essay papers are on <a href="https://www.researchgate.net/profile/Gihak-Kim-2" target="_blank">ResearchGate</a>.</p>
                     </div>
@@ -108,7 +174,7 @@
                     <div class="container">
                         <h3>Work Experience</h3>
                         <div class="features">
-                            <article>
+                            <article data-aos="fade-up">
                                 <div class="inner">
                                     <h4><a href="https://www.instagram.com/hoka_kr/" target="_blank">HOKA</a>, Seoul, KR - Customer Associate</h4>
                                     <p><i>July 2025 - September 2025</i></p>
@@ -119,7 +185,7 @@
                                     </ul>
                                 </div>
                             </article>
-                            <article>
+                            <article data-aos="fade-up" data-aos-delay="100">
                                 <div class="inner">
                                     <h4><a href="http://www.jmkedu.co.kr/main/index.html" target="_blank">JMK Education</a>, Seoul, KR - Teacher Assistant</h4>
                                     <p><i>February 2025 - June 2025</i></p>
@@ -137,26 +203,26 @@
                     <div class="container">
                         <h3>Education</h3>
                         <div class="features">
-                            <article>
+                            <article data-aos="fade-up">
                                 <div class="inner">
                                     <h4><a href="https://neweng.cau.ac.kr/index.do" target="_blank">Chung-Ang University</a></h4>
                                     <p><i>Bachelor's degree, <a href="https://security.cau.ac.kr/contents.htm?id=eng_univ" target="_blank">Industrial Security</a> (March 2025 - 2029)</i></p>
                                 </div>
-                                <a href="https://neweng.cau.ac.kr/index.do" target="_blank" class="image"><img src="images/cau.png" alt="Chung-Ang University Logo" /></a>
+                                <span class="image"><img src="images/cau.png" alt="Chung-Ang University Logo" /></span>
                             </article>
-                            <article>
+                            <article data-aos="fade-up" data-aos-delay="100">
                                 <div class="inner">
                                     <h4><a href="https://www.tue.nl/en/" target="_blank">Eindhoven University of Technology</a></h4>
                                     <p><i>Bachelor of Engineering, <a href="https://www.tue.nl/en/education/bachelor-college/bachelor-computer-science-and-engineering" target="_blank">Computer Science</a> (August 2024 - January 2025)</i></p>
                                 </div>
-                                <a href="https://www.tue.nl/en/" target="_blank" class="image logo-large"><img src="images/tue.png" alt="Eindhoven University of Technology Logo" /></a>
+                                <span class="image logo-large"><img src="images/tue.png" alt="Eindhoven University of Technology Logo" /></span>
                             </article>
-                            <article>
+                            <article data-aos="fade-up" data-aos-delay="200">
                                 <div class="inner">
                                     <h4><a href="https://www.iics.k12.tr/" target="_blank">Istanbul International Community School</a></h4>
                                     <p><i>International Baccalaureate Diploma (January 2021 - June 2024)</i></p>
                                 </div>
-                                <a href="https://www.iics.k12.tr/" target="_blank" class="image logo-large"><img src="images/iics.png" alt="Istanbul International Community School Logo" /></a>
+                                <span class="image logo-large"><img src="images/iics.png" alt="Istanbul International Community School Logo" /></span>
                             </article>
                         </div>
                     </div>
@@ -180,7 +246,7 @@
                     <div class="container">
                         <h3>Volunteering</h3>
                         <div class="features">
-                            <article>
+                            <article data-aos="fade-up">
                                 <div class="inner">
                                     <h4><a href="https://sfdc.sc.or.kr/app/evidence/crm_scan/202509/x02TJ00000BR00oYAD%EA%B9%80%EA%B8%B0%ED%95%99.PDF" target="_blank">Save the Children International</a> - Monthly Donor</h4>
                                     <p><i>July 2025 - Present</i></p>
@@ -189,7 +255,7 @@
                                     </ul>
                                 </div>
                             </article>
-                            <article>
+                            <article data-aos="fade-up" data-aos-delay="100">
                                 <div class="inner">
                                     <h4><a href="https://www.instagram.com/iics_roc/" target="_blank">Refugee Outreach Committee</a> - President</h4>
                                     <p><i>Associated with Istanbul International Community School &bull; February 2022 - April 2024</i></p>
@@ -208,7 +274,7 @@
                     <div class="container">
                         <h3>Honors & Awards</h3>
                         <div class="features">
-                            <article>
+                            <article data-aos="fade-up">
                                 <div class="inner">
                                     <h4><a href="https://gifitup.net/en/winners-2021/" target="_blank">GIF IT UP 2021 - Category Winner</a></h4>
                                     <p><i>Issued by <a href="https://www.europeana.eu/en" target="_blank">Europeana</a> &bull; Associated with Istanbul International Community School</i></p>
@@ -219,7 +285,7 @@
                     </div>
                 </section>
 
-            </div>
+            </main>
 
             <section id="footer">
                 <div class="container">
@@ -239,6 +305,33 @@
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
 
-    </body>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 800,
+                once: true,
+            });
+        </script>
 
+        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+        <script>
+            var options = {
+                strings: [
+                    'Industrial Security Major',
+                    'Cybersecurity & GRC Enthusiast',
+                    'Cross-Cultural Academic Background',
+                    'Seeking to Solve Complex Security Challenges'
+                ],
+                typeSpeed: 50,
+                backSpeed: 25,
+                backDelay: 1500,
+                startDelay: 500,
+                loop: true,
+                showCursor: true,
+                cursorChar: '|'
+            };
+            var typed = new Typed('#typed-text', options);
+        </script>
+
+    </body>
 </html>
