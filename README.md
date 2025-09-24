@@ -1,1 +1,1 @@
-# comptnet2025
+# Computer Network Practical Class 
