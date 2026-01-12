@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <meta name="description" content="The professional resume of Gihak Kim, an Industrial Security major specializing in Cybersecurity and GRC." />
         
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
@@ -278,6 +280,33 @@
                 50% { opacity: 0.0; }
             }
 
+            /* --- MATCHED Back to Top Button Styling --- */
+            #backToTop {
+                display: none; 
+                position: fixed;
+                bottom: 30px;
+                right: 330px; /* Offset to the left of your 300px right sidebar */
+                z-index: 1100;
+                border: none;
+                outline: none;
+                background-color: #007bff;
+                color: white;
+                cursor: pointer;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                font-size: 1.2em;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+                transition: background-color 0.3s, transform 0.3s, opacity 0.3s;
+                align-items: center;
+                justify-content: center;
+            }
+
+            #backToTop:hover {
+                background-color: #0056b3;
+                transform: translateY(-5px);
+            }
+
             /* --- TABLET BREAKPOINT (768px - 1024px) --- */
             @media screen and (max-width: 1024px) {
                 #main .container {
@@ -295,6 +324,10 @@
                 #four .feature-icons li {
                     font-size: 0.9em;
                     padding: 15px 20px 15px 75px;
+                }
+
+                #backToTop {
+                    right: 320px; /* Adjusted for smaller tablet sidebar padding */
                 }
             }
 
@@ -358,6 +391,14 @@
                 #nav ul li a {
                     font-size: 0.9em;
                 }
+
+                /* Mobile placement shifts to the far right since sidebar is gone */
+                #backToTop {
+                    right: 20px; 
+                    bottom: 20px;
+                    width: 45px;
+                    height: 45px;
+                }
             }
 
             /* --- SMALL MOBILE BREAKPOINT (up to 480px) --- */
@@ -403,6 +444,8 @@
         </style>
     </head>
     <body>
+        <button id="backToTop" title="Go to top"><i class="fas fa-chevron-up"></i></button>
+
         <section id="header">
             <header>
                 <span class="image avatar"><img src="images/master_gopher.png" alt="Gihak Kim" /></span>
@@ -625,11 +668,8 @@
             document.querySelectorAll('#nav a').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     const href = this.getAttribute('href');
-
-                    // Only apply smooth scroll if the link starts with # (internal section)
                     if (href.startsWith('#')) {
                         e.preventDefault();
-                        
                         document.querySelectorAll('#nav a').forEach(link => link.classList.remove('active'));
                         this.classList.add('active');
                         
@@ -639,15 +679,24 @@
                             const headerOffset = 20;
                             const elementPosition = target.getBoundingClientRect().top;
                             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                            
-                            window.scrollTo({
-                                top: offsetPosition,
-                                behavior: 'smooth'
-                            });
+                            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
                         }
                     }
-                    // For external links or PDF files, the browser will follow the link naturally
                 });
+            });
+
+            // Back to Top button logic matched to Coco's style
+            const backToTopBtn = document.getElementById("backToTop");
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 400) {
+                    backToTopBtn.style.display = "flex";
+                } else {
+                    backToTopBtn.style.display = "none";
+                }
+            });
+
+            backToTopBtn.addEventListener("click", () => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
             });
 
             // Active navigation highlighting
@@ -659,18 +708,13 @@
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop;
                     const sectionBottom = sectionTop + section.offsetHeight;
-                    
                     if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
                         current = section.getAttribute('id');
                     }
                 });
 
-                // Special case for the last section
                 const lastSection = sections[sections.length - 1];
-                const windowHeight = window.innerHeight;
-                const documentHeight = document.documentElement.scrollHeight;
-                
-                if (window.scrollY + windowHeight >= documentHeight - 50) {
+                if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 50) {
                     current = lastSection.getAttribute('id');
                 }
 
