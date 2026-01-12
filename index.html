@@ -8,41 +8,75 @@
         
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-        
-        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
         
         <style>
-            body {
-                background-color: #f4f4f4;
+            * {
+                box-sizing: border-box;
+            }
+
+            html, body {
+                background-color: #f8f9fa;
                 font-family: 'Poppins', sans-serif;
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+            }
+
+            /* --- Profile Picture Styling --- */
+            #header .image.avatar {
+                display: block;
+                width: 180px;      
+                height: 180px;     
+                margin: 0 auto 1.5em auto;
+                border-radius: 50%;
+                overflow: hidden;
+                border: 4px solid #00aaff; 
+                background-color: #fff;
+            }
+
+            #header .image.avatar img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; 
             }
 
             #main a {
-                text-decoration: none;
-                color: #007bff;
-                background-image: linear-gradient(to right, #007bff 50%, #007bff 50%);
-                background-position: 0 1.05em;
-                background-repeat: repeat-x;
-                background-size: 8px 2px;
+                text-decoration: underline;
+                color: #007bff !important; 
+                font-weight: bold !important;         
+                font-style: italic !important;        
                 transition: color 0.3s ease;
             }
 
             #main a:hover {
-                color: #0056b3;
+                color: #0056b3 !important; 
+            }
+
+            #nav ul li a {
+                font-style: normal !important;
+                font-weight: normal !important;
+                text-decoration: none !important;
             }
 
             #main .container {
-                min-width: 1250px;
+                max-width: 1250px;
+                width: 100%;
+                margin: 0 auto;
+                padding: 0 2em;
             }
 
             #main h3 {
-                color: #000000;
+                color: #1a1a1a;
                 font-weight: bold;
                 text-transform: uppercase;
                 letter-spacing: 1px;
+                border-bottom: 2px solid #007bff;
+                display: inline-block;
+                padding-bottom: 5px;
+                margin-bottom: 1.5em;
             }
 
-            /* CSS targets #three specifically, so we keep the ID name even if moved */
             #three .features article {
                 display: flex;
                 align-items: center;
@@ -52,9 +86,9 @@
                 flex-grow: 1;
             }
 
+            /* --- LOGO SIZE ADJUSTMENTS --- */
             #three .features article .image {
-                width: 180px;
-                margin-left: 1em;
+                margin-left: 2em;
                 flex-shrink: 0;
                 align-self: center;
                 display: flex;
@@ -63,20 +97,61 @@
             }
 
             #three .features article .image.logo-large {
-                width: 220px;
+                width: 190px;
+            }
+
+            #three .features article .image.logo-medium {
+                width: 140px;
+            }
+
+            #three .features article .image img {
+                width: 100%;
+                height: auto;
+                display: block;
             }
             
             #header {
-                background: linear-gradient(135deg, #4a4a4a 0%, #2c2c2c 100%);
+                background: linear-gradient(135deg, #2e3440 0%, #1a1c22 100%);
                 color: #ffffff;
+                padding: 2em;
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 300px;
+                height: 100vh;
+                overflow-y: auto;
+                z-index: 1000;
+                box-sizing: border-box;
             }
-            #header h1 a { color: #ffffff; }
-            #header p { color: #cccccc; }
+
+            #wrapper {
+                margin-right: 300px;
+                width: calc(100% - 300px);
+            }
+
+            #header h1 a { 
+                color: #ffffff !important; 
+                text-decoration: none !important; 
+                font-style: normal !important; 
+                font-weight: bold !important; 
+            }
+
+            #header p { color: #d8dee9; }
+
+            #nav ul {
+                list-style: none;
+                padding: 0;
+                margin: 1em 0;
+            }
+
             #nav ul li a {
-                color: #cccccc;
-                border-color: #555555;
+                color: #adb5bd;
+                border-bottom: 2px solid transparent;
                 transition: color 0.3s ease, border-bottom-color 0.3s ease;
+                display: block;
+                padding: 0.5em 0;
             }
+
             #nav ul li a.active, #nav ul li a:hover {
                 color: #00aaff;
                 border-bottom-color: #00aaff;
@@ -92,75 +167,268 @@
             }
 
             section .features article:hover {
-                transform: translateY(-10px) scale(1.02);
-                box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
             }
             
             #four .feature-icons {
                 display: flex;
                 flex-wrap: wrap;
                 gap: 15px;
+                padding: 0;
             }
+
             #four .feature-icons li {
                 background-color: #ffffff;
-                padding: 1px 25px 12px 60px; 
+                padding: 18px 25px 18px 85px; 
                 border-radius: 40px;
                 box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-                transition: background-color 0.3s ease, color 0.3s ease;
                 border: 1px solid #e0e0e0;
+                list-style: none;
+                position: relative;
+                display: flex;
+                align-items: center;
+                width: calc(50% - 7.5px); 
+                transition: transform 0.3s ease;
+                color: #444;
+                font-size: 0.95em;
+                line-height: 1.4;
             }
+
             #four .feature-icons li:hover {
-                background-color: #3d3d3d;
-                color: #ffffff;
+                transform: translateX(5px);
+                border-color: #00aaff;
             }
-            
+
+            #four .feature-icons li::before {
+                position: absolute;
+                left: 0; 
+                top: 0;
+                width: 65px; 
+                height: 100%;
+                background: #007bff; 
+                color: #ffffff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 40px 0 0 40px;
+                font-size: 1.3em;
+                font-family: 'Font Awesome 5 Free';
+                font-weight: 900;
+            }
+
+            footer .icons {
+                list-style: none;
+                padding: 0;
+                display: flex;
+                gap: 1em;
+                justify-content: center;
+                margin-top: 1em;
+            }
+
+            footer .icons li a {
+                color: #adb5bd;
+                font-size: 1.5em;
+                transition: color 0.3s ease;
+            }
+
+            footer .icons li a:hover {
+                color: #00aaff;
+            }
+
+            .image.main {
+                width: 100%;
+                overflow: hidden;
+                margin-bottom: 2em;
+            }
+
+            .image.main img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+
+            #footer {
+                background: #2e3440;
+                color: #d8dee9;
+                padding: 2em;
+                text-align: center;
+            }
+
+            .copyright {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
             .typed-cursor {
                 color: #00aaff;
                 animation: typed-blink 0.7s infinite;
             }
+
             @keyframes typed-blink {
                 50% { opacity: 0.0; }
             }
+
+            /* --- TABLET BREAKPOINT (768px - 1024px) --- */
+            @media screen and (max-width: 1024px) {
+                #main .container {
+                    padding: 0 1.5em;
+                }
+
+                #three .features article .image.logo-large {
+                    width: 180px;
+                }
+
+                #three .features article .image.logo-medium {
+                    width: 140px;
+                }
+
+                #four .feature-icons li {
+                    font-size: 0.9em;
+                    padding: 15px 20px 15px 75px;
+                }
+            }
+
+            /* --- MOBILE BREAKPOINT (up to 767px) --- */
+            @media screen and (max-width: 767px) {
+                #header {
+                    position: relative;
+                    width: 100%;
+                    height: auto;
+                    padding: 1.5em;
+                }
+
+                #wrapper {
+                    margin-right: 0;
+                    width: 100%;
+                }
+
+                #header .image.avatar {
+                    width: 120px; 
+                    height: 120px;
+                }
+
+                #main .container {
+                    padding: 0 1em;
+                }
+
+                #main h3 {
+                    font-size: 1.2em;
+                }
+
+                #three .features article {
+                    flex-direction: column;
+                    text-align: center;
+                }
+
+                #three .features article .image {
+                    margin: 1em auto 0 auto;
+                    width: 100px !important;
+                }
+
+                #three .features article .image.logo-large,
+                #three .features article .image.logo-medium {
+                    width: 120px !important;
+                }
+
+                #four .feature-icons li {
+                    width: 100%;
+                    font-size: 0.85em;
+                    padding: 15px 20px 15px 70px;
+                }
+
+                #four .feature-icons li::before {
+                    width: 55px;
+                    font-size: 1.1em;
+                }
+
+                section .features article {
+                    padding: 1em;
+                }
+
+                #nav ul li a {
+                    font-size: 0.9em;
+                }
+            }
+
+            /* --- SMALL MOBILE BREAKPOINT (up to 480px) --- */
+            @media screen and (max-width: 480px) {
+                #header {
+                    padding: 1em;
+                }
+
+                #header h1 {
+                    font-size: 1.5em;
+                }
+
+                #header p {
+                    font-size: 0.9em;
+                }
+
+                #main .container {
+                    padding: 0 0.75em;
+                }
+
+                #main h3 {
+                    font-size: 1.1em;
+                }
+
+                section .features article {
+                    padding: 0.75em;
+                }
+
+                #four .feature-icons li {
+                    padding: 12px 15px 12px 60px;
+                    font-size: 0.8em;
+                }
+
+                #four .feature-icons li::before {
+                    width: 50px;
+                    font-size: 1em;
+                }
+
+                footer .icons li a {
+                    font-size: 1.2em;
+                }
+            }
         </style>
     </head>
-    <body class="is-preload">
+    <body>
         <section id="header">
             <header>
                 <span class="image avatar"><img src="images/master_gopher.png" alt="Gihak Kim" /></span>
                 <h1 id="logo"><a href="#">Gihak Kim</a></h1>
-                <p>Industrial Security Major with a<br />
-                Cross-Cultural Academic Background.<br />
-                Interested in Cybersecurity & GRC.</p>
+                <p>Industrial Security Major<br />
+                Cross-Cultural Academic Background<br />
+                Cybersecurity & GRC Enthusiast</p>
             </header>
 
             <nav id="nav">
                 <ul>
-                    <li><a href="#one" class="active">About Me</a></li>
-                    <li><a href="resume.html" target="_blank">View CV (PDF)</a></li>
-                    <li><a href="#three">Education</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#two">Work Experience</a></li>
-                    <li><a href="#four">Skills & Certifications</a></li>
-                    <li><a href="#five">Volunteering</a></li>
-                    <li><a href="#six">Honors & Awards</a></li>
+                    <li><a href="#About Me" class="active">About Me</a></li>
+                    <li><a href="#Education">Education</a></li>
+                    <li><a href="#Projects">Projects</a></li>
+                    <li><a href="#Work Experience">Work Experience</a></li>
+                    <li><a href="#Skills and Certifications">Skills and Certifications</a></li>
+                    <li><a href="#Volunteering">Volunteering</a></li>
+                    <li><a href="#Honors and Awards">Honors and Awards</a></li>
                 </ul>
             </nav>
             
             <footer>
                 <ul class="icons">
-                    <li><a href="https://www.researchgate.net/profile/Gihak-Kim-2" class="icon brands fa-researchgate" target="_blank" aria-label="Gihak Kim's ResearchGate Profile"><span class="label">ResearchGate</span></a></li>
-                    <li><a href="https://www.linkedin.com/in/gihak-kim" class="icon brands fa-linkedin" target="_blank" aria-label="Gihak Kim's LinkedIn Profile"><span class="label">LinkedIn</span></a></li>
-                    <li><a href="https://github.com/gihak" class="icon brands fa-github" target="_blank" aria-label="Gihak Kim's Github Profile"><span class="label">Github</span></a></li>
-                    <li><a href="mailto:kgihak@gmail.com" class="icon solid fa-envelope" aria-label="Email Gihak Kim"><span class="label">Email</span></a></li>
-                    <li><a href="tel:+82-10-3920-3009" class="icon solid fa-phone" aria-label="Call Gihak Kim"><span class="label">Phone</span></a></li>
+                    <li><a href="https://www.researchgate.net/profile/Gihak-Kim-2" class="fab fa-researchgate" target="_blank" aria-label="ResearchGate"></a></li>
+                    <li><a href="https://www.linkedin.com/in/gihak-kim" class="fab fa-linkedin" target="_blank" aria-label="LinkedIn"></a></li>
+                    <li><a href="https://github.com/gihak" class="fab fa-github" target="_blank" aria-label="Github"></a></li>
+                    <li><a href="mailto:kgihak@gmail.com" class="fas fa-envelope" aria-label="Email"></a></li>
                 </ul>
             </footer>
         </section>
 
         <div id="wrapper">
             <main id="main">
-
-                <section id="one">
+                <section id="About Me">
                     <div class="image main" data-position="center">
                         <img src="images/banner.png" alt="" />
                     </div>
@@ -173,8 +441,8 @@
                     </div>
                 </section>
                 
-                <section id="three">
-                    <div class="container">
+                <section id="Education">
+                    <div class="container" id="three">
                         <h3>Education</h3>
                         <div class="features">
                             <article data-aos="fade-up">
@@ -182,7 +450,7 @@
                                     <h4><a href="https://neweng.cau.ac.kr/index.do" target="_blank">Chung-Ang University, Seoul Campus</a></h4>
                                     <p><i>Bachelor's degree, <a href="https://security.cau.ac.kr/contents.htm?id=eng_univ" target="_blank">Industrial Security</a> (March 2025 - 2029)</i></p>
                                 </div>
-                                <span class="image"><img src="images/cau.png" alt="Chung-Ang University Logo" /></span>
+                                <span class="image logo-medium"><img src="images/cau.png" alt="Chung-Ang University Logo" /></span>
                             </article>
                             <article data-aos="fade-up" data-aos-delay="100">
                                 <div class="inner">
@@ -202,7 +470,7 @@
                     </div>
                 </section>
 
-                <section id="projects">
+                <section id="Projects">
                     <div class="container">
                         <h3>Projects</h3>
                         <div class="features">
@@ -214,7 +482,7 @@
                                         <li>Authored a research paper on strengthening supply chain security in Korean SMEs through Zero Trust implementation.</li>
                                         <li>Conducted a comparative analysis of U.S., EU, and Japanese security guidelines to identify best practices.</li>
                                         <li>Proposed a cost-effective "Crawl-Walk-Run" model for stepwise security adoption in resource-constrained environments.</li>
-                                        <li><b><a href="https://www.researchgate.net/publication/397745740_Strategies_for_Strengthening_Supply_Chain_Security_in_Korean_SMEs_through_Zero_Trust_Adoption_and_Cost-Effective_Implementation_-_Comparative_Analysis_of_US_European_and_Japanese_Cases_and_Stepwise_Ro?_tp=eyJjb250ZXh0Ijp7InBhZ2UiOiJwcm9maWxlIiwicHJldmlvdXNQYWdlIjoicHJvZmlsZSIsInBvc2l0aW9uIjoicGFnZUNvbnRlbnQifX0" target="_blank">Read full paper on ResearchGate <i class="icon solid fa-external-link-alt"></i></a></b></li>
+                                        <li><b><a href="https://www.researchgate.net/publication/397745740_Strategies_for_Strengthening_Supply_Chain_Security_in_Korean_SMEs_through_Zero_Trust_Adoption_and_Cost-Effective_Implementation_-_Comparative_Analysis_of_US_European_and_Japanese_Cases_and_Stepwise_Ro?_tp=eyJjb250ZXh0Ijp7InBhZ2UiOiJwcm9maWxlIiwicHJldmlvdXNQYWdlIjoicHJvZmlsZSIsInBvc2l0aW9uIjoicGFnZUNvbnRlbnQifX0" target="_blank">Read full paper on ResearchGate</a></b></li>
                                     </ul>
                                 </div>
                             </article>
@@ -222,7 +490,7 @@
                     </div>
                 </section>
                 
-                <section id="two">
+                <section id="Work Experience">
                     <div class="container">
                         <h3>Work Experience</h3>
                         <div class="features">
@@ -235,7 +503,7 @@
                                         <li>Managed daily in-store operations, including maintaining visual merchandising standards, handling transactions, and restocking inventory.</li>
                                         <li>Met sales goals consistently and contributed to a team-focused environment centered on exceptional customer service and brand representation.</li>
                                     </ul>
-                                    </div>
+                                </div>
                             </article>
                             <article data-aos="fade-up" data-aos-delay="100">
                                 <div class="inner">
@@ -252,22 +520,21 @@
                     </div>
                 </section>
 
-                <section id="four">
-                    <div class="container">
+                <section id="Skills">
+                    <div class="container" id="four">
                         <h3>Skills & Certifications</h3>
                         <ul class="feature-icons">
-                            <li class="icon solid fa-language">Native proficiency in English and Korean</li>
-                            <li class="icon brands fa-python">Python (Programming Language)</li>
-                            <li class="icon solid fa-users">Customer Service</li>
-                            <li class="icon solid fa-chart-line">Sales</li>
-                            <li class="icon brands fa-google">Google Analytics Certification (GA4)</li>
-                            <li class="icon solid fa-comments">OPIc in English - ACTFL (Level: Advanced Low)</li>
-                            <li class="icon solid fa-file-alt">TOEIC - ETS (Score: 890 / 990)</li>
+                            <li class="icon-language">Native proficiency in English and Korean</li>
+                            <li class="icon-python">Python (Programming Language)</li>
+                            <li class="icon-customer">Customer Service</li>
+                            <li class="icon-sales">Sales</li>
+                            <li class="icon-analytics">Google Analytics Certification (GA4)</li>
+                            <li class="icon-opic">OPIc in English - ACTFL (Level: Advanced Low)</li>
                         </ul>
                     </div>
                 </section>
                 
-                <section id="five">
+                <section id="Volunteering">
                     <div class="container">
                         <h3>Volunteering</h3>
                         <div class="features">
@@ -276,14 +543,14 @@
                                     <h4><a href="https://sfdc.sc.or.kr/app/evidence/crm_scan/202509/x02TJ00000BR00oYAD%EA%B9%80%EA%B8%B0%ED%95%99.PDF" target="_blank">Save the Children International</a> - Monthly Donor</h4>
                                     <p><i>July 2025 - Present</i></p>
                                     <ul>
-                                        <li>Contributing ₩20,000 monthly to support children’s welfare and emergency relief efforts.</li>
+                                        <li>Contributing ₩20,000 monthly to support children's welfare and emergency relief efforts.</li>
                                     </ul>
                                 </div>
                             </article>
                             <article data-aos="fade-up" data-aos-delay="100">
                                 <div class="inner">
                                     <h4><a href="https://www.instagram.com/iics_roc/" target="_blank">Refugee Outreach Committee</a> - President</h4>
-                                    <p><i>Associated with Istanbul International Community School &bull; February 2022 - April 2024</i></p>
+                                    <p><i>Associated with Istanbul International Community School • February 2022 - April 2024</i></p>
                                     <ul>
                                         <li>Served as president, coordinating initiatives to support displaced families and raise awareness.</li>
                                         <li>Directed fundraising campaigns and organized donation drives, providing hundreds of Ramadan food boxes to families in need.</li>
@@ -295,47 +562,34 @@
                     </div>
                 </section>
 
-                <section id="six">
+                <section id="Honors and Awards">
                     <div class="container">
-                        <h3>Honors & Awards</h3>
+                        <h3>Honors and Awards</h3>
                         <div class="features">
                             <article data-aos="fade-up">
                                 <div class="inner">
                                     <h4><a href="https://gifitup.net/en/winners-2021/" target="_blank">GIF IT UP 2021 - Category Winner</a></h4>
-                                    <p><i>Issued by <a href="https://www.europeana.eu/en" target="_blank">Europeana</a> &bull; Associated with Istanbul International Community School</i></p>
+                                    <p><i>Issued by <a href="https://www.europeana.eu/en" target="_blank">Europeana</a> • Associated with Istanbul International Community School</i></p>
                                     <p>Recognized as a winner in the Children and Teenagers category of the international digital art competition for creating an animated GIF using Adobe Photoshop and archival material.</p>
                                 </div>
                             </article>
                         </div>
                     </div>
                 </section>
-
             </main>
 
             <section id="footer">
                 <div class="container">
                     <ul class="copyright">
-                        <li>&copy; Gihak Kim. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                        <li>&copy; Gihak Kim. All rights reserved.</li>
                     </ul>
                 </div>
             </section>
-
         </div>
-
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/jquery.scrollex.min.js"></script>
-        <script src="assets/js/jquery.scrolly.min.js"></script>
-        <script src="assets/js/browser.min.js"></script>
-        <script src="assets/js/breakpoints.min.js"></script>
-        <script src="assets/js/util.js"></script>
-        <script src="assets/js/main.js"></script>
 
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
         <script>
-            AOS.init({
-                duration: 800,
-                once: true,
-            });
+            AOS.init({ duration: 800, once: true });
         </script>
 
         <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
@@ -358,5 +612,74 @@
             var typed = new Typed('#typed-text', options);
         </script>
 
+        <script>
+            // Smooth scrolling for navigation
+            document.querySelectorAll('#nav a').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    // Remove active from all links
+                    document.querySelectorAll('#nav a').forEach(link => link.classList.remove('active'));
+                    // Add active to clicked link
+                    this.classList.add('active');
+                    
+                    const targetId = this.getAttribute('href').substring(1);
+                    const target = document.getElementById(targetId);
+                    if (target) {
+                        const headerOffset = 20;
+                        const elementPosition = target.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Active navigation highlighting
+            window.addEventListener('scroll', () => {
+                let current = '';
+                const sections = document.querySelectorAll('main section[id]');
+                const scrollPosition = window.scrollY + 200;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                // Special case for the last section
+                const lastSection = sections[sections.length - 1];
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight;
+                
+                if (window.scrollY + windowHeight >= documentHeight - 50) {
+                    current = lastSection.getAttribute('id');
+                }
+
+                document.querySelectorAll('#nav a').forEach(a => {
+                    a.classList.remove('active');
+                    const href = a.getAttribute('href').substring(1);
+                    if (href === current) {
+                        a.classList.add('active');
+                    }
+                });
+            });
+        </script>
+
+        <style>
+            /* Icon definitions for Skills & Certifications */
+            .icon-language::before { content: '\f1ab'; }
+            .icon-python::before { content: '\f121'; }
+            .icon-customer::before { content: '\f4fc'; }
+            .icon-sales::before { content: '\f201'; }
+            .icon-analytics::before { content: '\f080'; }
+            .icon-opic::before { content: '\f086'; }
+        </style>
     </body>
 </html>
