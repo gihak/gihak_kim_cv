@@ -157,6 +157,12 @@
                 border-bottom-color: #00aaff;
             }
 
+            /* Style for the PDF link specifically */
+            #nav ul li a.pdf-link {
+                color: #ffca28;
+                font-weight: bold !important;
+            }
+
             section .features article {
                 background: #ffffff;
                 border-radius: 12px;
@@ -413,6 +419,7 @@
                     <li><a href="#Skills and Certifications">Skills and Certifications</a></li>
                     <li><a href="#Volunteering">Volunteering</a></li>
                     <li><a href="#Honors and Awards">Honors and Awards</a></li>
+                    <li><a href="(ENG) Gihak Kim CV.pdf" target="_blank" class="pdf-link"><i class="fas fa-file-pdf"></i> View PDF CV</a></li>
                 </ul>
             </nav>
             
@@ -448,21 +455,22 @@
                             <article data-aos="fade-up">
                                 <div class="inner">
                                     <h4><a href="https://neweng.cau.ac.kr/index.do" target="_blank">Chung-Ang University, Seoul Campus</a></h4>
-                                    <p><i>Bachelor's degree, <a href="https://security.cau.ac.kr/contents.htm?id=eng_univ" target="_blank">Industrial Security</a> (March 2025 - 2029)</i></p>
+                                    <p><i>Bachelor's degree, <a href="https://security.cau.ac.kr/contents.htm?id=eng_univ" target="_blank">Industrial Security</a> (March 2025 - Present)</i></p>
                                 </div>
                                 <span class="image logo-medium"><img src="images/cau.png" alt="Chung-Ang University Logo" /></span>
                             </article>
                             <article data-aos="fade-up" data-aos-delay="100">
                                 <div class="inner">
                                     <h4><a href="https://www.tue.nl/en/" target="_blank">Eindhoven University of Technology</a></h4>
-                                    <p><i>Bachelor of Engineering, <a href="https://www.tue.nl/en/education/bachelor-college/bachelor-computer-science-and-engineering" target="_blank">Computer Science and Engineering</a> (August 2024 - January 2025)</i></p>
+                                    <p><i>Bachelor of Engineering, <a href="https://www.tue.nl/en/education/bachelor-college/bachelor-computer-science-and-engineering" target="_blank">Computer Science and Engineering</a> (August 2024 - January 2025 [Withdrawal])</i></p>
                                 </div>
                                 <span class="image logo-large"><img src="images/tue.png" alt="Eindhoven University of Technology Logo" /></span>
                             </article>
                             <article data-aos="fade-up" data-aos-delay="200">
                                 <div class="inner">
                                     <h4><a href="https://www.iics.k12.tr/" target="_blank">Istanbul International Community School</a></h4>
-                                    <p><i>International Baccalaureate Diploma (January 2021 - May 2024)</i></p>
+                                    <p><i>International Baccalaureate Diploma Programme (IB DP) Bilingual Diploma (January 2021 - May 2024)</i></p>
+                                    <p>GPA: 4.2/4.5. Awards: 4 High Honor Awards.</p>
                                 </div>
                                 <span class="image logo-large"><img src="images/iics.png" alt="Istanbul International Community School Logo" /></span>
                             </article>
@@ -477,7 +485,7 @@
                             <article data-aos="fade-up">
                                 <div class="inner">
                                     <h4><a href="https://www.researchgate.net/publication/397745740_Strategies_for_Strengthening_Supply_Chain_Security_in_Korean_SMEs_through_Zero_Trust_Adoption_and_Cost-Effective_Implementation_-_Comparative_Analysis_of_US_European_and_Japanese_Cases_and_Stepwise_Ro?_tp=eyJjb250ZXh0Ijp7InBhZ2UiOiJwcm9maWxlIiwicHJldmlvdXNQYWdlIjoicHJvZmlsZSIsInBvc2l0aW9uIjoicGFnZUNvbnRlbnQifX0" target="_blank">Strategies for Strengthening Supply Chain Security in Korean SMEs</a></h4>
-                                    <p><i>Academic Research Paper</i></p>
+                                    <p><i>Academic Research Paper (Nov 2025)</i></p>
                                     <ul>
                                         <li>Authored a research paper on strengthening supply chain security in Korean SMEs through Zero Trust implementation.</li>
                                         <li>Conducted a comparative analysis of U.S., EU, and Japanese security guidelines to identify best practices.</li>
@@ -520,16 +528,14 @@
                     </div>
                 </section>
 
-                <section id="Skills">
+                <section id="Skills and Certifications">
                     <div class="container" id="four">
                         <h3>Skills & Certifications</h3>
                         <ul class="feature-icons">
                             <li class="icon-language">Native proficiency in English and Korean</li>
-                            <li class="icon-python">Python (Programming Language)</li>
-                            <li class="icon-customer">Customer Service</li>
-                            <li class="icon-sales">Sales</li>
-                            <li class="icon-analytics">Google Analytics Certification (GA4)</li>
-                            <li class="icon-opic">OPIc in English - ACTFL (Level: Advanced Low)</li>
+                            <li class="icon-python">Python, C, Git</li>
+                            <li class="icon-customer">Customer Service & Operations</li>
+                            <li class="icon-opic">OPIc in English - Advanced Low (June 2025)</li>
                         </ul>
                     </div>
                 </section>
@@ -569,7 +575,7 @@
                             <article data-aos="fade-up">
                                 <div class="inner">
                                     <h4><a href="https://gifitup.net/en/winners-2021/" target="_blank">GIF IT UP 2021 - Category Winner</a></h4>
-                                    <p><i>Issued by <a href="https://www.europeana.eu/en" target="_blank">Europeana</a> • Associated with Istanbul International Community School</i></p>
+                                    <p><i>Issued by Europeana • Associated with Istanbul International Community School</i></p>
                                     <p>Recognized as a winner in the Children and Teenagers category of the international digital art competition for creating an animated GIF using Adobe Photoshop and archival material.</p>
                                 </div>
                             </article>
@@ -613,28 +619,32 @@
         </script>
 
         <script>
-            // Smooth scrolling for navigation
+            // Improved Smooth scrolling for navigation
             document.querySelectorAll('#nav a').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    
-                    // Remove active from all links
-                    document.querySelectorAll('#nav a').forEach(link => link.classList.remove('active'));
-                    // Add active to clicked link
-                    this.classList.add('active');
-                    
-                    const targetId = this.getAttribute('href').substring(1);
-                    const target = document.getElementById(targetId);
-                    if (target) {
-                        const headerOffset = 20;
-                        const elementPosition = target.getBoundingClientRect().top;
-                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    const href = this.getAttribute('href');
+
+                    // Only apply smooth scroll if the link starts with # (internal section)
+                    if (href.startsWith('#')) {
+                        e.preventDefault();
                         
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                        });
+                        document.querySelectorAll('#nav a').forEach(link => link.classList.remove('active'));
+                        this.classList.add('active');
+                        
+                        const targetId = href.substring(1);
+                        const target = document.getElementById(targetId);
+                        if (target) {
+                            const headerOffset = 20;
+                            const elementPosition = target.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                            
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
                     }
+                    // For external links or PDF files, the browser will follow the link naturally
                 });
             });
 
@@ -663,10 +673,12 @@
                 }
 
                 document.querySelectorAll('#nav a').forEach(a => {
-                    a.classList.remove('active');
-                    const href = a.getAttribute('href').substring(1);
-                    if (href === current) {
-                        a.classList.add('active');
+                    const href = a.getAttribute('href');
+                    if (href.startsWith('#')) {
+                        a.classList.remove('active');
+                        if (href.substring(1) === current) {
+                            a.classList.add('active');
+                        }
                     }
                 });
             });
@@ -677,7 +689,6 @@
             .icon-language::before { content: '\f1ab'; }
             .icon-python::before { content: '\f121'; }
             .icon-customer::before { content: '\f4fc'; }
-            .icon-sales::before { content: '\f201'; }
             .icon-analytics::before { content: '\f080'; }
             .icon-opic::before { content: '\f086'; }
         </style>
